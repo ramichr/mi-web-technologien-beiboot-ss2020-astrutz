@@ -1,0 +1,23 @@
+{
+  "name": "mi-web-technologien-beiboot-ss2020-astrutz",
+  "version": "1.0.0",
+  "description": "PictureBox: Upload, show and manipulate images online",
+  "main": "main.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz.git"
+  },
+  "author": "Alexander Strutz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz/issues"
+  },
+  "homepage": "https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
