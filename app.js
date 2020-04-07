@@ -4,6 +4,7 @@ const app = express();
 app.set('views', __dirname + '/view');
 app.set('view engine', 'ejs');
 app.use(express.static('web'));
+app.use('/files', express.static('files'));
 
 const rootRouter = require('./route/root');
 const overviewRouter = require('./route/overview');

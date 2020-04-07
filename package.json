@@ -19,8 +19,14 @@
   "homepage": "https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz#readme",
   "dependencies": {
     "assert": "^2.0.0",
+    "dropify": "^0.2.2",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "sharp": "^0.25.2",
     "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "@material/ripple": "^5.1.0"
   }
 }
