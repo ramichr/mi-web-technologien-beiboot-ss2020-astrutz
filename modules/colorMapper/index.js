@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const config = require('../../global.config');
+const jimp = require('jimp');
 
-module.exports = function(image, name){
+function mapping(image, name){
     let json = [];
     for(let i = 0; i < image.getWidth(); i++){
         for(let j = 0; j < image.getHeight(); j++){
@@ -12,9 +13,14 @@ module.exports = function(image, name){
             } else {
                 json.push({'color': color, 'count': 1});
             }
-            console.log(i);
         }
     }
     json.sort(function(a, b){return b.count - a.count});
-    fs.writeFileSync(path.join(__dirname + '/../../files/colormaps/' + name + '.json'), JSON.stringify(json.slice(0, config.colorMapDepth)));
-};
+    fs.writeFileSync(path.join(__dirname + '/../../files/colormaps/' + name + '.json'), JSON.stringify(json.slice(0, config.colorMapDepth))); //todo filename
+}
+
+process.on('message', (async message => {
+    let filePath = message.path;
+    let file = await jimp.read(filePath);
+    mapping(file, message.name);
+}));

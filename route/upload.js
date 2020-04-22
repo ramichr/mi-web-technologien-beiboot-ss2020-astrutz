@@ -31,9 +31,10 @@ router.post('/', (req, res) => {
             let filePath = files.file.path;
             let file = await jimp.read(filePath);
 
-            //let process = fork(path.join(__dirname + '/../modules/colorMapper/index.js'));
+            let process = fork(path.join(__dirname + '/../modules/colorMapper/index.js'));
+            process.send(files.file);
 
-            colorMapper(file, files.file.name);
+            //colorMapper(file, files.file.name);
 
             //save original version
             file.write(path.join(__dirname + '/../files/original/' + files.file.name));
