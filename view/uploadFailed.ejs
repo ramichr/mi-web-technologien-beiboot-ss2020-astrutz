@@ -1,0 +1,10 @@
+<html>
+<%- include('partials/header', {script:'upload.js', stylesheet: 'upload.css'}) %>
+<div class="container">
+    <h1>Failed</h1>
+    <p>Error uploading file "<%= files.file.name %>" with error: <%= error %></p>
+<!--    <p>Picture "<%= files.file.name %>" (<%= files.file.size %> bytes, <%= fields.width %>px x <%= fields.height %>px) uploaded successfully</p>-->
+    <a class="btn btn-primary" id="backHomeButton" href="/">Back</a>
+</div>
+<%- include('partials/footer') %>
+</html>
