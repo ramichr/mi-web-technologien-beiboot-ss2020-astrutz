@@ -2,26 +2,29 @@
 <%- include('partials/header', {script:'overview.js', stylesheet: 'overview.css'}) %>
 <div class="container">
     <h1>Image overview</h1>
-    <% if (images.length > 0) { %>
+    <% if (images && images.length > 0) { %>
     <div class="imageContainer">
         <% for(let i in images) { let srcset = "" %>
-            <picture>
-                <img class="img-fluid" src=<%= 'files/square/' + images[i] %>>
-                <% for(let j in sizes){ %>
-                    <% srcset += 'files/' + sizes[j] + "/" + images[i] + " " + sizes[j] + "px" %>
-                    <% if (j !== sizes.length - 1) srcset += "," %>
-                <% } %>
-                <source srcset="<%= srcset %>" type="image/png">
-            </picture>
+        <picture>
+            <img class="img-fluid" src=<%= 'files/square/' + images[i] %> data-imagename="<%= images[i] %>">
+            <% for(let j in sizes){ %>
+            <% srcset += 'files/' + sizes[j] + "/" + images[i] + " " + sizes[j] + "px" %>
+            <% if (j !== sizes.length - 1) srcset += "," %>
+            <% } %>
+            <button class="deleteImage"><i
+                    class="fa fa-trash"></i></button>
+            <source srcset="<%= srcset %>" type="image/png">
+        </picture>
         <% } %>
     </div>
     <% } else { %>
-        <div class="alert alert-warning" role="alert">
-            No images uploaded.
-        </div>
-        <a class="btn btn-primary" href="/upload">Upload</a>
+    <div class="alert alert-warning" role="alert">
+        No images uploaded.
+    </div>
+    <a class="btn btn-primary" href="/upload">Upload</a>
     <% } %>
     <a class="btn btn-primary" id="backHomeButton" href="/">Back</a>
 </div>
 <%- include('partials/footer') %>
+
 </html>
