@@ -34,8 +34,6 @@ router.post('/', (req, res) => {
             let process = fork(path.join(__dirname + '/../modules/colorMapper/index.js'));
             process.send(files.file);
 
-            //colorMapper(file, files.file.name);
-
             //save original version
             file.write(path.join(__dirname + '/../files/original/' + files.file.name));
 
@@ -44,8 +42,9 @@ router.post('/', (req, res) => {
 
             //save 3 versions for mobile, tablet and desktop
             for (let i in imageSizes) {
+            
                 file
-                    .resize(imageSizes[i], jimp.AUTO)
+                    .resize(parseInt(imageSizes[i]), jimp.AUTO)
                     .write(path.join(__dirname + '/../files/' + imageSizes[i] + '/' + files.file.name));
             }
 
