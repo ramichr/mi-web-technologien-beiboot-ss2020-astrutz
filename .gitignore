@@ -1,6 +1,9 @@
 # Jetbrains
 .\idea
 
+# Uploaded images
+files/
+
 # Logs
 logs
 *.log
