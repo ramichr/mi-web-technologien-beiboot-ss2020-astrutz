@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const path = require('path');
-const config = require('../global.config');
+const config = require('../global.config').get;
 //define width for mobile, tablet and desktop
 const imageSizes = config.imageSizes;
 
@@ -16,11 +16,13 @@ router.get('/', (req, res) => {
 
 router.delete('/:fileName', (req, res) => {
     let fileName = req.params.fileName;
-    let allSizes = config.imageSizes;
-    allSizes.push('original', 'square', 'custom');
+    let allSizes = ['original', 'square', 'custom'];
+    allSizes.push(imageSizes);
         for (let sizeName in allSizes) {
         fs.unlinkSync(path.join(__dirname + '/../files/' + allSizes[sizeName] + '/' + fileName));
     }
+    fs.unlinkSync(path.join(__dirname + '/../files/colormaps/' + fileName + '.json'));
+
 });
 
 module.exports = router;
