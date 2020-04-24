@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const formidable = require('formidable');
-const {fork} = require('child_process');
+const getColors = require('get-image-colors')
 const path = require('path');
 const jimp = require('jimp');
 const config = require('../global.config');
-const colorMapper = require('../modules/colorMapper');
+const fs = require('fs');
 //define width for mobile, tablet and desktop
 const imageSizes = config.imageSizes;
 const squareSize = config.squareSize;
@@ -31,11 +31,10 @@ router.post('/', (req, res) => {
             let filePath = files.file.path;
             let file = await jimp.read(filePath);
 
-            let process = fork(path.join(__dirname + '/../modules/colorMapper/index.js'));
-            process.send(files.file);
+            let originalPath = path.join(__dirname + '/../files/original/' + files.file.name);
 
             //save original version
-            file.write(path.join(__dirname + '/../files/original/' + files.file.name));
+            file.write(originalPath);
 
             //save square version
             file.resize(squareSize, squareSize).write(path.join(__dirname + '/../files/square/' + files.file.name));
@@ -50,6 +49,12 @@ router.post('/', (req, res) => {
 
             //save custom version
             file.resize(parseInt(fields.width), parseInt(fields.height)).write(path.join(__dirname + '/../files/custom/' + files.file.name));
+
+            //TODO: Show these in Web Tech
+            //let process = fork(path.join(__dirname + '/../modules/colorMapper/index.js'));
+            //process.send(files.file);
+            let colors = await getColors(originalPath);
+            fs.writeFileSync(path.join(__dirname + '/../files/colormaps/' + files.file.name), JSON.stringify(colors));
 
             res.render('uploadSuccess', {fields, files});
         });
