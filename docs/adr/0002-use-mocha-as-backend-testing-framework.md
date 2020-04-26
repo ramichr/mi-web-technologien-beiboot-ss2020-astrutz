@@ -19,3 +19,9 @@ Chosen option: "Mocha", because
 * Operates on Node.js
 * Can be used for backend and frontend testing
 * Request-Package to test every REST-endpoint with different payloads
+
+## Links
+* [Mocha](https://mochajs.org/)
+* [Jest](https://jestjs.io/)
+* [Jasmine](https://jasmine.github.io/)
+* [Karma](https://karma-runner.github.io/)

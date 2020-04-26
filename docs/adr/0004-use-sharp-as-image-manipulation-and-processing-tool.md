@@ -16,3 +16,8 @@ To resize and save pictures in a specific file extension a library is needed to 
 Chosen option: "Sharp", because 
 * less boilerplate code
 * automatic calculation of width when only height is given at a resize
+
+## Links
+
+[sharp](https://www.npmjs.com/package/sharp)
+[JIMP](https://www.npmjs.com/package/jimp)

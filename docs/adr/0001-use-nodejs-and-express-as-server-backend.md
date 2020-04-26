@@ -17,3 +17,9 @@ Chosen option: "Node.js & Express", because
 * More experience in the language
 * NPM-Packages make it possible to extend the server with newer libraries
 * NPM-Package for using images
+
+## Links
+* [PHP](https://www.php.net/)
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com/de/)
+

@@ -24,3 +24,10 @@ Chosen option: "EJS", because
 ## Note
 
 This may change if the requirements for this app change. For this reason it only got the status "proposed"
+
+
+## Links
+
+* [EJS](https://ejs.co/)
+* [React](https://reactjs.org/)
+* [Vue](https://vuejs.org/)
