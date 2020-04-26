@@ -20,6 +20,6 @@ Chosen option: "get-image-colors", because
 * can be directly safed into a json file
 
 ## Links
-[get-image-colors](https://www.npmjs.com/package/get-image-colors)
-[own solution](https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz/blob/master/modules/colorMapper/index.js)
-[extract-colors](https://www.npmjs.com/package/extract-colors)
+* [get-image-colors](https://www.npmjs.com/package/get-image-colors)
+* [own solution](https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz/blob/master/modules/colorMapper/index.js)
+* [extract-colors](https://www.npmjs.com/package/extract-colors)

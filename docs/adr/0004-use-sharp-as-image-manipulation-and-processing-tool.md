@@ -19,5 +19,5 @@ Chosen option: "Sharp", because
 
 ## Links
 
-[sharp](https://www.npmjs.com/package/sharp)
-[JIMP](https://www.npmjs.com/package/jimp)
+* [sharp](https://www.npmjs.com/package/sharp)
+* [JIMP](https://www.npmjs.com/package/jimp)
