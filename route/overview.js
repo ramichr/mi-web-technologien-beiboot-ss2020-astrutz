@@ -18,8 +18,11 @@ router.delete('/:fileName', (req, res) => {
     let fileName = req.params.fileName;
     let allSizes = ['original', 'square', 'custom'];
     allSizes.push(imageSizes);
-        for (let sizeName in allSizes) {
-        fs.unlinkSync(path.join(__dirname + '/../files/' + allSizes[sizeName] + '/' + fileName));
+    fs.unlinkSync(path.join(__dirname + '/../files/original/' + fileName));
+    fs.unlinkSync(path.join(__dirname + '/../files/square/' + fileName));
+    fs.unlinkSync(path.join(__dirname + '/../files/custom/' + fileName));
+    for(let sizeName in imageSizes){
+        fs.unlinkSync(path.join(__dirname + '/../files/' + imageSizes[sizeName] + '/' + fileName));
     }
     fs.unlinkSync(path.join(__dirname + '/../files/colormaps/' + fileName + '.json'));
 

@@ -1,5 +1,5 @@
 const express = require('express');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.set('views', __dirname + '/view');
 app.set('view engine', 'ejs');
@@ -15,7 +15,7 @@ app.use('/upload', uploadRouter);
 app.use('/overview', overviewRouter);
 
 app.listen(PORT, function () {
-    console.log('Server started on port', PORT);
+    console.log('Server started');
 });
 
 module.exports = app;

@@ -12,11 +12,13 @@ PictureBox runs with [Docker](https://www.docker.com/). To run it locally follow
 ## Build
 
 * Open the folder with a terminal
-* Execute the command `docker build -t picturebox .`
+* Execute the command `docker-compose build`
 
 ## Run
 
-* Execute the command `docker run -p <PORT>:3000 picturebox`
-* Open `http://localhost:<PORT>` and use the app
+* Execute the command `docker-compose up`
+* Open `http://localhost:3000` and use the app
 
-With `<PORT>` you can specify at which port the app should run.
+## Run
+
+* Execute the command `docker-compose down`
