@@ -105,11 +105,3 @@ dist
 
 # TernJS port file
 .tern-port
-/files
-/files/320
-/files/860
-/files/1200
-/files/colormaps
-/files/custom
-/files/original
-/files/square/*.png
