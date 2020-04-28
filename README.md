@@ -14,11 +14,11 @@ PictureBox runs with [Docker](https://www.docker.com/). To run it locally follow
 * Open the folder with a terminal
 * Execute the command `docker-compose build`
 
-## Run
+## Run server
 
 * Execute the command `docker-compose up`
 * Open `http://localhost:3000` and use the app
 
-## Run
+## Stop server
 
 * Execute the command `docker-compose down`
