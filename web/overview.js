@@ -11,4 +11,11 @@ window.onload = () => {
             await $.ajax(options);
         }
     });
+
+    $('img').each(function (elem) {
+        let colormap = $(this).data('colormap');
+        $.ajax({url: '/files/colormaps/' + colormap}).then(function (data){
+            console.log(data);
+        })
+    });
 };

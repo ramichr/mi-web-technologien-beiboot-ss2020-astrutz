@@ -10,7 +10,11 @@ router.get('/', (req, res) => {
     fs.readdir(path.join(__dirname + '/../files/original'), (err, files) => {
         if (err)
             res.status(502).send("Can't load images");
-        res.render('overview', { images: files, sizes: imageSizes });
+        fs.readdir(path.join(__dirname + '/../files/colormaps'), (err, maps) => {
+            if (err)
+                res.status(502).send("Can't load images");
+            res.render('overview', { images: files, sizes: imageSizes, colormaps: maps });
+        });
     });
 });
 
@@ -21,7 +25,7 @@ router.delete('/:fileName', (req, res) => {
     fs.unlinkSync(path.join(__dirname + '/../files/original/' + fileName));
     fs.unlinkSync(path.join(__dirname + '/../files/square/' + fileName));
     fs.unlinkSync(path.join(__dirname + '/../files/custom/' + fileName));
-    for(let sizeName in imageSizes){
+    for (let sizeName in imageSizes) {
         fs.unlinkSync(path.join(__dirname + '/../files/' + imageSizes[sizeName] + '/' + fileName));
     }
     fs.unlinkSync(path.join(__dirname + '/../files/colormaps/' + fileName + '.json'));

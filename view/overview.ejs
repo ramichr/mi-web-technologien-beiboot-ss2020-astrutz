@@ -6,7 +6,7 @@
     <div class="imageContainer">
         <% for(let i in images) { let srcset = "" %>
         <picture>
-            <img class="img-fluid" src=<%= 'files/square/' + images[i] %> data-imagename="<%= images[i] %>">
+            <img class="img-fluid" src=<%= 'files/square/' + images[i] %> data-imagename="<%= images[i] %>" data-colormap="<%= colormaps[i]%>">
             <% for(let j in sizes){ %>
             <% srcset += 'files/' + sizes[j] + "/" + images[i] + " " + sizes[j] + "px" %>
             <% if (j !== sizes.length - 1) srcset += "," %>
