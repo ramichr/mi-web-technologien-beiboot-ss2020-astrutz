@@ -8,7 +8,10 @@ window.onload = () => {
                 method: 'DELETE',
                 url: window.location.href + '/' + imageName
             }
-            await $.ajax(options);
+            location.reload();
+            $.ajax(options).then(function (data){
+                location.reload();
+            });
         }
     });
 

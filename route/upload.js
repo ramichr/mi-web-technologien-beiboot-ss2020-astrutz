@@ -45,7 +45,6 @@ router.post('/', (req, res) => {
 
             //save 3 versions for mobile, tablet and desktop
             for (let i in imageSizes) {
-                console.log(imageSizes[i]);
                 await sharp(filePath)
                     .resize(parseInt(imageSizes[i]))
                     .png()
