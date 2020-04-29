@@ -28,6 +28,6 @@ This may change if the requirements for this app change. For this reason it only
 
 ## Links
 
-* [EJS](https://ejs.co/)
+* [EJS](https://ejs.com/)
 * [React](https://reactjs.org/)
 * [Vue](https://vuejs.org/)
