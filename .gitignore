@@ -1,6 +1,9 @@
 # Jetbrains
 .\idea
 
+#Static
+files
+
 # Logs
 logs
 *.log
