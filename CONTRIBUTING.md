@@ -126,8 +126,8 @@ To be in line with the general convention of issues, please use the [Issue templ
 [gitflow]: https://nvie.com/img/git-model@2x.png
 [CoC]: https://www.contributor-covenant.org/version/2/0/code_of_conduct/
 [mozilla]: https://github.com/mozilla/diversity
-[pullrequest]: /.github/pull-request-template.md
-[issue]: /.github/issue-template.md
+[pullrequest]: /.github/pull_request_template.md
+[issue]: /.github/ISSUE_TEMPLATE
 [adr]: https://github.com/joelparkerhenderson/architecture_decision_record
 [readme]: /README.md
 [commit]: https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project
