@@ -22,3 +22,10 @@ PictureBox runs with [Docker](https://www.docker.com/). To run it locally follow
 ## Stop server
 
 * Execute the command `docker-compose down`
+
+## Workload
+
+* [Issue#1](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/1) - 16h
+* [Issue#2](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/2) - 8h
+* [Issue#3](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/3) - 2h
+* [Issue#4](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/4) - 4h
