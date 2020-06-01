@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node app.js",
+    "scaffolding": "node scaffold.js",
     "test": "mocha 'test/**/*.test.js'"
   },
   "repository": {
@@ -19,8 +20,10 @@
   "homepage": "https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz#readme",
   "dependencies": {
     "assert": "^2.0.0",
+    "axios": "^0.19.2",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "form-data": "^3.0.0",
     "formidable": "^1.2.2",
     "get-image-colors": "^2.0.1",
     "madr": "^2.1.2",

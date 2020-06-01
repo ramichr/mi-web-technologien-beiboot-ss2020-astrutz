@@ -18,6 +18,7 @@ router.post('/', (req, res) => {
     try {
         const form = formidable({ multiples: true });
         form.parse(req, async (err, fields, files) => {
+            console.log(files);
             if (err) {
                 res.render('uploadFailed', { fields, files, error: err });
             }
@@ -58,7 +59,6 @@ router.post('/', (req, res) => {
                 .toFile(path.join(__dirname + '/../files/custom/' + files.file.name));
 
 
-            //TODO: Show these in Web Tech
             //let process = fork(path.join(__dirname + '/../modules/colorMapper/index.js'));
             //process.send(files.file);
             let colors = await getColors(originalPath);
