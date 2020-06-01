@@ -19,6 +19,13 @@ PictureBox runs with [Docker](https://www.docker.com/). To run it locally follow
 * Execute the command `docker-compose up`
 * Open `http://localhost:3000` and use the app
 
+### Scaffold images
+To get 30 sample images to work with you can do the following:
+
+* Run the server as mentioned before
+* Execute the command `npm run scaffolding`
+* Open `http://localhost:3000/overview` to see the generated images
+
 ## Stop server
 
 * Execute the command `docker-compose down`
