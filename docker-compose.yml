@@ -4,7 +4,6 @@ services:
     build: .
     image: node:11
     working_dir: /dist
-    #command: npm run test && 'npm run start'
     command: bash -c "npm run test && npm run start"
     ports:
       - 3000:3000
