@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
         if (req.headers.pb) {
             res.sendStatus(500);
         } else {
-            res.render('uploadFailed', { fields, files, error: err });
+            res.render('uploadFailed', { error: err });
         }
     }
 });

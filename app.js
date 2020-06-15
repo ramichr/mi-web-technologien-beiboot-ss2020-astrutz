@@ -9,10 +9,12 @@ app.use('/files', express.static('files'));
 const rootRouter = require('./route/root');
 const overviewRouter = require('./route/overview');
 const uploadRouter = require('./route/upload');
+const apiRouter = require('./route/api');
 
 app.use('/', rootRouter);
 app.use('/upload', uploadRouter);
 app.use('/overview', overviewRouter);
+app.use('/api', apiRouter);
 
 app.listen(PORT, function () {
     console.log('Server started');

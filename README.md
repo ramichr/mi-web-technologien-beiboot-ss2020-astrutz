@@ -30,9 +30,50 @@ To get 30 sample images to work with you can do the following:
 
 * Execute the command `docker-compose down`
 
+## API Reference
+Informations for images can be called by an API when the server is running.
+
+### Endpoint
+
+`http://localhost:3000/api`
+
+### Header Fields
+
+| Header Field | Value                           |
+|--------------|---------------------------------|
+| Content-Type | *Required* <br>application/json |
+
+### Query Parameters
+
+| Query Parameter | Value  | Default      |
+|-----------------|--------|--------------|
+| sort  | *Optional* <br>Defines the order of the elements. <br>Possible values: `alphabetic`, `date`, `color`, `random`  | "alphabetic" |
+| count | *Optional*<br>Defines the number of elements.<br>If the given number exceeds the number of elements, all elements will be returned. | 10  |
+
+### Response
+
+**Response Object**
+
+| Key   | Value Type             | Value Description                            |
+|-------|------------------------|----------------------------------------------|
+| sort  | String                 | Choosen sort option                          |
+| count | Integer                | Number of actual returned image informations |
+| items | Array of Image Objects | Returned image informations                  |
+
+**Image Object**
+
+| Key    | Value Type                                                                     | Value Description                   |
+|--------|--------------------------------------------------------------------------------|-------------------------------------|
+| name   | String                                                                         | Filename with extension             |
+| colors | Array of [get-image-colors objects](http://npmjs.org/package/get-image-colors) | Five most dominant colors per image |
+| primaryColor   | String                                                                           | HEX-Code of most dominant color             |
+| date   | long                                                                           | Timestamp when uploaded             |
+| url    | String                                                                         | Relative URL to get the image       |
+
 ## Workload
 
 * [Issue#1](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/1) - 16h
 * [Issue#2](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/2) - 8h
 * [Issue#3](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/3) - 2h
 * [Issue#4](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/4) - 4h
+* [Issue#5](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/5) - 4h

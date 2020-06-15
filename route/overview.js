@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.delete('/:fileName', (req, res) => {
+router.delete('/:fileName', (req) => {
     let fileName = req.params.fileName;
     let allSizes = ['original', 'square', 'custom'];
     allSizes.push(imageSizes);
