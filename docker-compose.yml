@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   app:
     build: .
@@ -6,12 +6,9 @@ services:
     working_dir: /dist
     command: bash -c "npm run test && npm run start"
     ports:
-      - 3000:3000
-      volumes:
-        - type: volume
-          source: backendData
-          target: /dist/files
-  
-  volumes:
-    backendData:
-  
+      - "3000:3000"
+    volumes:
+      - backendData:/dist/files
+
+volumes:
+  backendData:
