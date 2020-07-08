@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node app.js",
     "scaffolding": "node scaffold.js",
-    "test": "mocha 'test/**/*.test.js'",
     "lint": "eslint '**/*.js'"
   },
   "repository": {
