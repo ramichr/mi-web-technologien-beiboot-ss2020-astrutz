@@ -23,6 +23,7 @@ PictureBox runs with [Docker](https://www.docker.com/). To run it locally follow
 To get 30 sample images to work with you can do the following:
 
 * Run the server as mentioned before
+* Install dependencies via `npm install`
 * Execute the command `npm run scaffolding`
 * Open `http://localhost:3000/overview` to see the generated images
 
