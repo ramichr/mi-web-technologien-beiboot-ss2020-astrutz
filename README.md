@@ -2,24 +2,29 @@
 
 PictureBox is a website to upload and (soon) manipulate images. It could let me pass through the beiboot project.
 
-## Installation
+## Frontend Development Enviroment
+The frontend dev enviroment can be used to develop using the server API for image data.
+
+## Server Enviroment
+
+### Installation
 
 PictureBox runs with [Docker](https://www.docker.com/). To run it locally follow these steps:
 
 * Install Docker [here](https://docs.docker.com/get-docker/)
 * Clone this repository with `git clone https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz.git`.
 
-## Build
+### Build
 
 * Open the folder with a terminal
 * Execute the command `docker-compose build`
 
-## Run server
+### Run server
 
 * Execute the command `docker-compose up`
 * Open `http://localhost:3000` and use the app
 
-### Scaffold images
+#### Scaffold images
 To get 30 sample images to work with you can do the following:
 
 * Run the server as mentioned before
@@ -27,33 +32,33 @@ To get 30 sample images to work with you can do the following:
 * Execute the command `npm run scaffolding`
 * Open `http://localhost:3000/overview` to see the generated images
 
-## Stop server
+### Stop server
 
 * Execute the command `docker-compose down`
 
-## API Reference
+### API Reference
 Informations for images can be called by an API when the server is running.
 
-### Endpoint
+#### Endpoint
 
 `http://localhost:3000/api`
 
-### Header Fields
+#### Header Fields
 
 | Header Field | Value                           |
 |--------------|---------------------------------|
 | Content-Type | *Required* <br>application/json |
 
-### Query Parameters
+#### Query Parameters
 
 | Query Parameter | Value  | Default      |
 |-----------------|--------|--------------|
 | sort  | *Optional* <br>Defines the order of the elements. <br>Possible values: `alphabetic`, `date`, `color`, `random`  | "alphabetic" |
 | count | *Optional*<br>Defines the number of elements.<br>If the given number exceeds the number of elements, all elements will be returned. | 10  |
 
-### Response
+#### Response
 
-**Response Object**
+##### Response Object
 
 | Key   | Value Type             | Value Description                            |
 |-------|------------------------|----------------------------------------------|
@@ -61,7 +66,7 @@ Informations for images can be called by an API when the server is running.
 | count | Integer                | Number of actual returned image informations |
 | items | Array of Image Objects | Returned image informations                  |
 
-**Image Object**
+##### Image Object
 
 | Key    | Value Type                                                                     | Value Description                   |
 |--------|--------------------------------------------------------------------------------|-------------------------------------|

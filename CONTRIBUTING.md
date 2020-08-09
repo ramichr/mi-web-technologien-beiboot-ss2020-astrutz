@@ -112,6 +112,35 @@ Further paragraphs come after blank lines.
 ### Source Code
 This project is a Node.js application and follows the [W3 Schools JavaScript Style Guide] [w3]. Any other language integrations must follow a widely acknowledged langauge convention or styleguide.
 
+## Project folder structure
+
+### /dev
+Provides a frontend development container which uses the API and provides it's own buildchain.
+
+### /docs
+Artifacts and documents for Github, such as ADR in Markdown. 
+
+### /files
+Storage for persisted files when not using Docker. Although the Docker container uses it's own volume, to use the server without Docker the files folder is mandatory. The files are sorted in own folders by their size. The identifier is their name, which won't change.
+
+### /modules
+Contains server logic, separated as own files and modules, such as the colormapping.
+
+### /node_modules
+Just the typical node_modules folder, used by the server enviroment.
+
+### /route
+Contains the separate HTTP routes, for the API as well as the frontend.
+
+### /scaffold
+Source for images which can be used in the server enviroment with `npm run scaffold`. Images are loaded in from this folder.
+
+### /view
+Contains .ejs templates which are used for dynamic content.
+
+### /web
+Contains CSS/JS frontend files and can be used with a static route.
+
 ## Git Workflow
 This project is following the Gitflow template. It's important to use the branches  dev, feature, hotfix and master properly. This project won't use a release branch since there is no difference between the dev system and the production system.
 
