@@ -6,24 +6,31 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     let count = req.query.count || 10;
     let sort = req.query.sort || 'alphabetic';
+    let from = req.query.from || 1;
     let response = {};
-    response.items = getImages(count, sort);
+    response.items = getImages(count, sort, from - 1);
     response.count = response.items.length < count ? response.items.length : count;
     response.sort = sort;
     res.send(response);
 });
 
-function getImages(count, sort){
+function getImages(count, sort, from){
     let images = [];
+    let offset = 0;
     let fileNames = fs.readdirSync(path.join(__dirname + '/../files/original'));
     if(fileNames.length < count){
         count = fileNames.length;
     }
+    if(count + from < fileNames) {
+      offset = fileNames - from;
+    } else {
+      offset = from;
+    }
     switch(sort){
-        case 'alphabetic': fileNames = fileNames.sort().slice(0, count); break;
-        case 'date': fileNames = fileNames.sort(sortByDate).slice(0, count); break;
-        case 'color': fileNames = fileNames.sort(sortByColor).slice(0, count); break;
-        case 'random': fileNames = shuffle(fileNames).slice(0, count); break;
+        case 'alphabetic': fileNames = fileNames.sort().slice(offset, count); break;
+        case 'date': fileNames = fileNames.sort(sortByDate).slice(offset, count); break;
+        case 'color': fileNames = fileNames.sort(sortByColor).slice(offset, count); break;
+        case 'random': fileNames = shuffle(fileNames).slice(offset, count); break;
     }
     for(let i in fileNames){
         images.push(buildImageInformation(fileNames[i]));
