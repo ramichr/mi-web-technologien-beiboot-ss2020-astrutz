@@ -1,0 +1,24 @@
+version: '3.4'
+services:
+  frontend:
+    build:
+      context: ../../
+      dockerfile: .docker/prod/Dockerfile
+    restart: always
+    container_name: frontend
+    ports:
+      - "4000:4000"
+
+  backend:
+    build: ../../../
+    restart: always
+    container_name: backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: volume
+        source: imageData
+        target: /home/node/imageData
+
+volumes:
+  imageData:

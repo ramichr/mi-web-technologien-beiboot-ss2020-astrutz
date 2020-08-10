@@ -1,0 +1,26 @@
+version: '3.4'
+services:
+  frontend:
+    build:
+      context: ../../
+      dockerfile: .docker/dev/Dockerfile
+    container_name: frontend
+    ports:
+      - "4000:4000"
+    volumes:
+      - type: bind
+        source: ../../
+        target: /home/node/
+
+  backend:
+    build: ../../../
+    container_name: backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: volume
+        source: imageData
+        target: /home/node/imageData
+
+volumes:
+  imageData:

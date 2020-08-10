@@ -3,7 +3,7 @@
 PictureBox is a website to upload and (soon) manipulate images. It could let me pass through the beiboot project.
 
 ## Frontend Development Enviroment
-The frontend dev enviroment can be used to develop using the server API for image data.
+Information on the dev enviroment can be found in it's [README.md](https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz/tree/master/dev/README.md).
 
 ## Server Enviroment
 
