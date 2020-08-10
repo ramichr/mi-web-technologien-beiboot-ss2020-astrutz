@@ -5,14 +5,16 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "watch": "node reload.js",
+    "watch": "cd home/node && node reload.js",
     "dev": "docker-compose -f .docker/dev/docker-compose.yml up --build",
     "prod": "docker-compose -f .docker/prod/docker-compose.yml up",
-    "babel": "babel src/js/main.js -o dist/main.min.js"
+    "babel": "babel src/js/main.js -o dist/main.min.js",
+    "clean": "docker system prune -a"
   },
   "author": "Alexander Strutz",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.1"
   },

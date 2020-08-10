@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 const babel = spawn('npx', ['babel', 'src/js/main.js', '--watch', '--out-file', 'dist/main.min.js']);
-const nodesass = spawn('node-sass', ['--output-style=compressed','--watch', 'src/css/style.scss', 'dist/style.min.css']);
+const sass = spawn('sass', ['--style=compressed','--watch', 'src/css/style.scss:dist/style.min.css']);
 const app = spawn('nodemon', ['--legacy-watch', 'app.js']);
 
 babel.stdout.on('data', (stdout) => {
@@ -15,15 +15,15 @@ babel.on('close', (code) => {
     console.log(`Babel closed (${code})`);
 });
  
-nodesass.stdout.on('data', (data) => {
-    console.log(`Sass: ${data}`);
+sass.stdout.on('data', (stdout) => {
+    console.log(`Sass: ${stdout}`);
 });
 
-nodesass.stderr.on('data', (data) => {
-    console.error(`Sass: ${data}`);
+sass.stderr.on('data', (stderr) => {
+    console.error(`Sass: ${stderr}`);
 });
 
-nodesass.on('close', (code) => {
+sass.on('close', (code) => {
     console.log(`Sass closed (${code})`);
 });
 
