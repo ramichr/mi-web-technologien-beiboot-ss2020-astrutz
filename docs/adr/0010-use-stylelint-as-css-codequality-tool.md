@@ -1,72 +1,61 @@
-# [short title of solved problem and solution]
+# Use ESLint as CSS code quality tool
 
-* Status: [proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)] <!-- optional -->
-* Deciders: [list everyone involved in the decision] <!-- optional -->
-* Date: [YYYY-MM-DD when the decision was last updated] <!-- optional -->
-
-Technical Story: [description | ticket/issue URL] <!-- optional -->
+* Status: accepted
+* Date: 2020-08-11
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
-
-## Decision Drivers <!-- optional -->
-
-* [driver 1, e.g., a force, facing concern, …]
-* [driver 2, e.g., a force, facing concern, …]
-* … <!-- numbers of drivers can vary -->
+To increase the CSS code quality a tool for control should be implemented.
 
 ## Considered Options
 
-* [option 1]
-* [option 2]
-* [option 3]
-* … <!-- numbers of options can vary -->
+* Stylelint
+* CSSLint
+* CSSNano
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: "Stylelint"
 
-### Positive Consequences <!-- optional -->
+### Positive Consequences
 
-* [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-* …
+* Large support provided
+* Fully integrated in Node.js
+* Large rule sets to modify (over 170 rules)
+* Possibilty to use plugins
 
-### Negative Consequences <!-- optional -->
+### Negative Consequences
 
-* [e.g., compromising quality attribute, follow-up decisions required, …]
-* …
+* It inflates the project size (npm module alone > 1MB)
 
-## Pros and Cons of the Options <!-- optional -->
+## Pros and Cons of the Options
 
-### [option 1]
+### Stylelint
 
-[example | description | pointer to more information | …] <!-- optional -->
+* Good, because it's compatible with Node.js
+* Good, because it provides modules and individual implementations
+* Good, because it minifies files
+* Good, because it automatically fixes minor issues
+* Bad, because it's module is large
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+### CSSLint
 
-### [option 2]
+* Good, because it's compatible with Node.js
+* Good, because it provides a CLI
+* Good, becuase it can be integrated into IDEs
+* Bad, because it doesn't provide rulse sets
+* Bad, because it isn't used very much
 
-[example | description | pointer to more information | …] <!-- optional -->
+### CSSNano
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+* Good, because it's very small (< 30KB)
+* Good, because it's compatible with Node.js
+* Bad, because it's version isn't stable at the moment
+* Bad, because it's a tool based on a website
+* Bad, because it only got a few rule sets (below 40)
 
-### [option 3]
+## Links
 
-[example | description | pointer to more information | …] <!-- optional -->
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
-
-## Links <!-- optional -->
-
-* [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
-* … <!-- numbers of links can vary -->
+* [Stylelint](https://stylelint.io/)
+* [CSSLint](http://csslint.net/)
+* [CSSNano](https://cssnano.co/)
