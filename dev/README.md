@@ -19,15 +19,23 @@ It runs at `http://localhost:4000`. To get images you can open `http://localhost
 To stop the container just basically hit `CTRL-C`.
 
 ## Buildchain
-In order to use different development tools, a buildchain is configured in the following order:
-`Lint -> SASS -> Minify -> Run application`  
+In order to use different development tools, a buildchain is configured in the following order:   
+
+`JavaScript Lint -> SCSS Lint -> SASS -> Clean CSS -> Minify -> Run application`  
+
 When using the dev mode, these chain runs after every save (aka hot reload).
 
-### Lint
+### JavaScript Lint
 This project uses [ESLint](https://eslint.org/docs/user-guide/getting-started) and the [airbnb styleguide](https://github.com/airbnb/javascript). In production mode it logs warnings and runs the buildchain anyway. In dev mode it won't log warnings, because it would abort the lint process re-invocation.
+
+### SCSS Lint
+This project uses [stylelint](https://stylelint.io/) and the [stylelint scss](https://github.com/kristerkari/stylelint-scss) rules.
 
 ### SASS
 CSS precompiling is implemented with [SASS](https://www.npmjs.com/package/sass). It compiles and minifies the `style.scss` in `/src/css` and copies it to `/dist/style.min.css`, which is used by `/dist/index.html`.
+
+### Clean CSS
+Compiled CSS is cleaned with [PurgeCSS](https://purgecss.com/CLI.html#installation). PurgeCSS removes all CSS selectors from `/dist/style.min.css`, which are not used in `dist/index.html`.
 
 ### Minify
 Minification is implemented with [Babel](https://babeljs.io/). It compiles and minifies the `main.js` in `/src/js` and copies it to `/dist/main.min.js`, which is used by `/dist/index.html`.
