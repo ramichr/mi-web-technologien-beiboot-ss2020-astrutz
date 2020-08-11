@@ -1,72 +1,61 @@
-# [short title of solved problem and solution]
+# Use ESLint as JavaScript code quality tool
 
-* Status: [proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)] <!-- optional -->
-* Deciders: [list everyone involved in the decision] <!-- optional -->
-* Date: [YYYY-MM-DD when the decision was last updated] <!-- optional -->
-
-Technical Story: [description | ticket/issue URL] <!-- optional -->
+* Status: accepted
+* Date: 2020-08-11
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
-
-## Decision Drivers <!-- optional -->
-
-* [driver 1, e.g., a force, facing concern, …]
-* [driver 2, e.g., a force, facing concern, …]
-* … <!-- numbers of drivers can vary -->
+To increase the JavaScript code quality a tool for control should be implemented.
 
 ## Considered Options
 
-* [option 1]
-* [option 2]
-* [option 3]
-* … <!-- numbers of options can vary -->
+* ESLint
+* JSLint
+* JSHint
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: "ESLint"
 
-### Positive Consequences <!-- optional -->
+### Positive Consequences
 
-* [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-* …
+* Large support provided
+* Large community and extensions
+* Rule sets can be adapted by developers easily
 
-### Negative Consequences <!-- optional -->
+### Negative Consequences
 
-* [e.g., compromising quality attribute, follow-up decisions required, …]
-* …
+* Understanding rules needs a lot of learning at first
+* Warnings can't be turned on with live reload
 
-## Pros and Cons of the Options <!-- optional -->
+## Pros and Cons of the Options
 
-### [option 1]
+### ESLint
 
-[example | description | pointer to more information | …] <!-- optional -->
+* Good, because it's compatible with Node.js
+* Good, because it provides individual rule sets
+* Good, because it provides a CLI
+* Good, because it's well documented
+* Good, because it provides some pre-defined style guides
+* Bad, because it's not easy to use at first
+* Bad, because it blocks live reload on warnings
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+### JSLint
 
-### [option 2]
+* Bad, because it only accepts few rules
+* Bad, because it's not much supported
+* Bad, because it's not suitable for live reload
 
-[example | description | pointer to more information | …] <!-- optional -->
+### JSHint
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+* Good, because it's widely used
+* Good, because it's smaller than ESLint
+* Good, because it has some IDE implementations
+* Bad, because it doesn't provide performance tests
+* Bad, because it's CLI isn't very configurable
 
-### [option 3]
+## Links
 
-[example | description | pointer to more information | …] <!-- optional -->
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
-
-## Links <!-- optional -->
-
-* [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
-* … <!-- numbers of links can vary -->
+* [ESLint](https://eslint.org/docs/user-guide/getting-started)
+* [JSLint](https://www.npmjs.com/package/jslint)
+* [JSHint](https://www.npmjs.com/package/jshint)
