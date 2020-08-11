@@ -1,72 +1,62 @@
-# [short title of solved problem and solution]
+# Use Babel as JavaScript Compiler
 
-* Status: [proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)] <!-- optional -->
-* Deciders: [list everyone involved in the decision] <!-- optional -->
-* Date: [YYYY-MM-DD when the decision was last updated] <!-- optional -->
-
-Technical Story: [description | ticket/issue URL] <!-- optional -->
+* Status: accepted
+* Date: 2020-08-11
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
-
-## Decision Drivers <!-- optional -->
-
-* [driver 1, e.g., a force, facing concern, …]
-* [driver 2, e.g., a force, facing concern, …]
-* … <!-- numbers of drivers can vary -->
+To make JavaScript compatible with most browsers and minify it, a compiler is needed.
 
 ## Considered Options
 
-* [option 1]
-* [option 2]
-* [option 3]
-* … <!-- numbers of options can vary -->
+* Babel
+* Sucrase
+* SWC
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: "Babel"
 
-### Positive Consequences <!-- optional -->
+### Positive Consequences
 
-* [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-* …
+* Large support provided
+* Large community and extensions
+* Files are already minified
+* Compatible with live reload
 
-### Negative Consequences <!-- optional -->
+### Negative Consequences
 
-* [e.g., compromising quality attribute, follow-up decisions required, …]
-* …
+* Everything other than core functionality needs a lot of learning
 
-## Pros and Cons of the Options <!-- optional -->
+## Pros and Cons of the Options
 
-### [option 1]
+### Babel
 
-[example | description | pointer to more information | …] <!-- optional -->
+* Good, because it's compatible with Node.js
+* Good, because it provides modules and individual implementations
+* Good, because it minifies files
+* Good, because it provides a CLI
+* Bad, because it's not easy to use
+* Bad, because it's module structure is hard to learn and understand
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+### Sucrase
 
-### [option 2]
+* Good, because it's faster than Babel
+* Bad, because it doesn't provide modules and individual implementations
+* Bad, because it doesn't minify files
+* Bad, because it doesn't provide support for old browsers
+* Bad, because its focus relies on React and TypeScript
 
-[example | description | pointer to more information | …] <!-- optional -->
+### SWC
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+* Good, because it's faster than Babel
+* Good, because it provides a CLI
+* Bad, because it only provides few helpers/modules
+* Bad, because it seems to only adapt into Babel
+* Bad, because it doesn't minify files
 
-### [option 3]
+## Links
 
-[example | description | pointer to more information | …] <!-- optional -->
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
-
-## Links <!-- optional -->
-
-* [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
-* … <!-- numbers of links can vary -->
+* [Babel](https://babeljs.io/)
+* [Sucrase](https://github.com/alangpierce/sucrase)
+* [SWC](https://swc-project.github.io/)
