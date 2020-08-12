@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 
 const babel = spawn('npx', ['babel', 'src/js/main.js', '--watch', '--out-file', 'dist/main.min.js']);
 const sass = spawn('sass', ['--style=compressed', '--watch', 'src/css/style.scss:dist/style.min.css']);
-const app = spawn('nodemon', ['app.js', '--legacy-watch', '-e', 'js,scss', '--exec', 'stylelint --quiet src/css/*.scss && eslint --quiet src/js/* && node']);
+const app = spawn('nodemon', ['app.js', '--legacy-watch', '-e', 'js,scss', '--exec', 'npx purgecss --css dist/style.min.css --content dist/*.html,dist/*.js --output dist/style.min.css && stylelint --quiet src/css/*.scss && eslint --quiet src/js/* && node']);
 
 babel.stdout.on('data', (stdout) => {
   console.log(`Babel: ${stdout}`);
