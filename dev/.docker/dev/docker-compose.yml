@@ -1,10 +1,10 @@
 version: '3.4'
 services:
-  frontend:
+  dev_frontend:
     build:
       context: ../../
       dockerfile: .docker/dev/Dockerfile
-    container_name: frontend
+    container_name: dev_frontend
     ports:
       - "4000:4000"
     volumes:
@@ -12,9 +12,9 @@ services:
         source: ../../
         target: /home/node/
 
-  backend:
+  dev_backend:
     build: ../../../
-    container_name: backend
+    container_name: dev_backend
     ports:
       - "3000:3000"
     volumes:
