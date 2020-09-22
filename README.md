@@ -4,6 +4,7 @@ PictureBox is a website to upload and (soon) manipulate images. It could let me 
 
 ## Links regarding Issue #7 (PWA)
 [PWA (deployed)](https://astrutz.github.io/)   
+[PWA (deployed, but with Trump quotes)](https://astrutz.github.io?trump=true)   
 [Sources](https://github.com/astrutz/mi-web-technologien-beiboot-ss2020-Dominikdeimel/tree/master/Frontend/devPage)   
 [Decision.md](https://github.com/astrutz/mi-web-technologien-beiboot-ss2020-Dominikdeimel/blob/master/Frontend/devPage/Decision.md)   
 
