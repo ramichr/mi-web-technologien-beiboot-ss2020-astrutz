@@ -3,9 +3,9 @@
 PictureBox is a website to upload and (soon) manipulate images. It could let me pass through the beiboot project.
 
 ## Links regarding Issue #7 (PWA)
-[PWA (deployed)](https://astrutz.github.io/)
-[Sources](https://github.com/astrutz/mi-web-technologien-beiboot-ss2020-Dominikdeimel/tree/master/Frontend/devPage)
-[Decision.md](https://github.com/astrutz/mi-web-technologien-beiboot-ss2020-Dominikdeimel/blob/master/Frontend/devPage/Decision.md)
+[PWA (deployed)](https://astrutz.github.io/)   
+[Sources](https://github.com/astrutz/mi-web-technologien-beiboot-ss2020-Dominikdeimel/tree/master/Frontend/devPage)   
+[Decision.md](https://github.com/astrutz/mi-web-technologien-beiboot-ss2020-Dominikdeimel/blob/master/Frontend/devPage/Decision.md)   
 
 ## Frontend Development Enviroment
 Information on the dev enviroment can be found in it's [README.md](https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2020-astrutz/tree/master/dev/README.md).
