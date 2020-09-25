@@ -89,5 +89,5 @@ Informations for images can be called by an API when the server is running.
 * [Issue#4](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/4) - 4h
 * [Issue#5](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/5) - 4h
 * [Issue#6](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/6) - 16h
-* [Issue#7](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/7) - tbd
+* [Issue#7](https://github.com/mi-classroom/mi-master-wt-beiboot-2020/issues/7) - 46h
 
